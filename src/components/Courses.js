@@ -30,10 +30,19 @@ function Courses({ courses, deleteCourse }) {
     });
   };
 
+  const randomCourse=()=>{
+    let randomNum = Math.floor(Math.random()*courses.length);
+    if(randomNum===index){
+      randomNum=index+1;
+    }
+    setIndex(checkIndex(randomNum));
+  }
+
   return (
     <div>
       <div className="title">
         <h2>Kurslarım</h2>
+        <button className="button" onClick={randomCourse}>Ratgele Kurs Atama</button>
       </div>
       <div className="courses">
         <button className="chevron" onClick={prevItem}>
