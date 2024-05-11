@@ -12,7 +12,7 @@
 }
 .card{
     margin: 20px;
-    border-radius: 15px;
+    border-radius: 50px;
     padding: 30px;
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.433);
     border: 1px solid rgb(0, 0, 0);
@@ -37,4 +37,13 @@
     border-radius: 50px;
     cursor: pointer;
     box-shadow: 0 2px 2px 0 black;
+}
+.chevron{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    height:max-content;
+    margin-top: 210px;
+    color:#8b00b1;
+    font-size: 20px;
 }
