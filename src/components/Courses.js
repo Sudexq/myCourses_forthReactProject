@@ -1,6 +1,9 @@
 import { useState } from "react";
 // import Course from "./Course";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+//import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { RightOutlined, LeftOutlined } from "@ant-design/icons";
+import { Button, Card, Flex, Space, Typography } from "antd";
+const { Title, Text , Paragraph } = Typography;
 
 function Courses({ courses, deleteCourse }) {
   const [index, setIndex] = useState(0);
@@ -30,33 +33,34 @@ function Courses({ courses, deleteCourse }) {
     });
   };
 
-  const randomCourse=()=>{
-    let randomNum = Math.floor(Math.random()*courses.length);
-    if(randomNum===index){
-      randomNum=index+1;
+  const randomCourse = () => {
+    let randomNum = Math.floor(Math.random() * courses.length);
+    if (randomNum === index) {
+      randomNum = index + 1;
     }
     setIndex(checkIndex(randomNum));
-  }
+  };
 
   return (
     <div>
-      <div className="title">
-        <h2>Kurslarım</h2>
-        <button className="button" onClick={randomCourse}>Ratgele Kurs Atama</button>
-      </div>
-      <div className="courses">
-        <button className="chevron" onClick={prevItem}>
-          <FaChevronLeft />
-        </button>
-        <div className="card">
-          <h3>{title}</h3>
-          <h5 className="price">{price}TL</h5>
-          <p className="content">{content}</p>
-        </div>
-        <button className="chevron" onClick={nextItem}>
-          <FaChevronRight />
-        </button>
-      </div>
+      <Flex vertical align="center">
+        <Title level={1}>Kurslarım</Title>
+        <Button type="primary" onClick={randomCourse}>
+          Ratgele Kurs Atama
+        </Button>
+      </Flex>
+      <Flex justify="center" align="center">
+        <Button type="link" size="large" onClick={prevItem}>
+          <LeftOutlined />
+        </Button>
+        <Card title={title} size="small"  className="card">
+          <Title italic level={5} type="danger">{price}TL</Title>
+          <Paragraph style={{fontSize:'12px'}}>{content}</Paragraph>
+        </Card>
+        <Button type="link" size="large" onClick={nextItem}>
+          <RightOutlined />
+        </Button>
+      </Flex>
     </div>
   );
 }

@@ -1,49 +1,12 @@
 .App{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
-.title{
-    text-align: center;
-    margin: 50px;
-}
-.courses{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
+
 .card{
     margin: 20px;
     border-radius: 50px;
     padding: 30px;
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.433);
-    border: 1px solid rgb(0, 0, 0);
-    width: 280px;
-    height: 350px;
-}
-.price{
-    color: red;
-    font-style: italic;
-}
-.content{
-    font-size: 12px;
-    height: 220px;
-}
-.button{
-    padding: 5px;
-    border: none;
-    color: white;
-    background-color: #8b00b1;
-    width: 130px;
-    font-size: 12px;
-    border-radius: 50px;
-    cursor: pointer;
-    box-shadow: 0 2px 2px 0 black;
-}
-.chevron{
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    height:max-content;
-    margin-top: 210px;
-    color:#8b00b1;
-    font-size: 20px;
+    width: 340px;
+    height: 400px;
 }

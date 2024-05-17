@@ -3,6 +3,7 @@ import Courses from "./components/Courses";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Loading from "./components/Loading";
+import { Button } from 'antd';
 
 function App() {
   const [courses, setCourses] = useState([]);
@@ -38,14 +39,14 @@ function App() {
           {courses.length === 0 ? (
             <div className="title">
               <h2>Kursların hepsi silindi!</h2>
-              <button
+              <Button
                 className="button"
                 onClick={() => {
                   fetchCourses();
                 }}
               >
                 Yenile
-              </button>
+              </Button>
             </div>
           ) : (
             <Courses courses={courses} deleteCourse={afterDelete} />
